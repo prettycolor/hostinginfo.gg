@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1020"/>
+      <stop offset="35%" style="stop-color:#0c1425"/>
+      <stop offset="65%" style="stop-color:#091020"/>
+      <stop offset="100%" style="stop-color:#070c18"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#0EA5E9"/>
+      <stop offset="50%" style="stop-color:#3B82F6"/>
+      <stop offset="100%" style="stop-color:#6366F1"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="28%" r="30%">
+      <stop offset="0%" style="stop-color:#0EA5E9;stop-opacity:0.04"/>
+      <stop offset="100%" style="stop-color:#0EA5E9;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="glow-f">
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="core-f">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <rect width="1200" height="300" fill="url(#glow)"/>
+
+  <!-- DNS Reticle icon — centered at 600, 75, scaled for banner -->
+  <g transform="translate(600, 72) scale(0.5)">
+    <!-- Outer ring with tick marks -->
+    <circle cx="0" cy="0" r="120" fill="none" stroke="#0EA5E9" stroke-width="0.75" opacity="0.12"/>
+    <line x1="0" y1="-120" x2="0" y2="-112" stroke="#0EA5E9" stroke-width="1" opacity="0.3"/>
+    <line x1="120" y1="0" x2="112" y2="0" stroke="#0EA5E9" stroke-width="1" opacity="0.3"/>
+    <line x1="0" y1="120" x2="0" y2="112" stroke="#0EA5E9" stroke-width="1" opacity="0.3"/>
+    <line x1="-120" y1="0" x2="-112" y2="0" stroke="#0EA5E9" stroke-width="1" opacity="0.3"/>
+    <line x1="85" y1="-85" x2="80" y2="-80" stroke="#0EA5E9" stroke-width="0.75" opacity="0.2"/>
+    <line x1="85" y1="85" x2="80" y2="80" stroke="#0EA5E9" stroke-width="0.75" opacity="0.2"/>
+    <line x1="-85" y1="-85" x2="-80" y2="-80" stroke="#0EA5E9" stroke-width="0.75" opacity="0.2"/>
+    <line x1="-85" y1="85" x2="-80" y2="80" stroke="#0EA5E9" stroke-width="0.75" opacity="0.2"/>
+
+    <!-- Middle ring with score arc -->
+    <circle cx="0" cy="0" r="80" fill="none" stroke="#3B82F6" stroke-width="0.75" opacity="0.15"/>
+    <path d="M0,-80 A80,80 0 1,1 -62,-50" fill="none" stroke="#0EA5E9" stroke-width="2" opacity="0.3" stroke-linecap="round" filter="url(#glow-f)"/>
+
+    <!-- Inner ring with targeting brackets -->
+    <circle cx="0" cy="0" r="40" fill="none" stroke="#0EA5E9" stroke-width="1" opacity="0.25"/>
+    <path d="M-28,-40 L-40,-40 L-40,-28" fill="none" stroke="#0EA5E9" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+    <path d="M28,-40 L40,-40 L40,-28" fill="none" stroke="#0EA5E9" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+    <path d="M-28,40 L-40,40 L-40,28" fill="none" stroke="#0EA5E9" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+    <path d="M28,40 L40,40 L40,28" fill="none" stroke="#0EA5E9" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+
+    <!-- Crosshair lines -->
+    <line x1="0" y1="-130" x2="0" y2="-45" stroke="#0EA5E9" stroke-width="0.5" opacity="0.15"/>
+    <line x1="0" y1="45" x2="0" y2="130" stroke="#0EA5E9" stroke-width="0.5" opacity="0.15"/>
+    <line x1="-130" y1="0" x2="-45" y2="0" stroke="#0EA5E9" stroke-width="0.5" opacity="0.15"/>
+    <line x1="45" y1="0" x2="130" y2="0" stroke="#0EA5E9" stroke-width="0.5" opacity="0.15"/>
+
+    <!-- Probe labels -->
+    <text x="0" y="-128" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#0EA5E9" opacity="0.4">DNS</text>
+    <text x="128" y="4" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#0EA5E9" opacity="0.4">TLS</text>
+    <text x="0" y="136" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#0EA5E9" opacity="0.4">WHOIS</text>
+    <text x="-128" y="4" text-anchor="middle" font-family="ui-monospace, monospace" font-size="8" fill="#0EA5E9" opacity="0.4">WAF</text>
+    <text x="92" y="-92" text-anchor="middle" font-family="ui-monospace, monospace" font-size="7" fill="#3B82F6" opacity="0.3">ASN</text>
+    <text x="92" y="98" text-anchor="middle" font-family="ui-monospace, monospace" font-size="7" fill="#3B82F6" opacity="0.3">CDN</text>
+    <text x="-92" y="-92" text-anchor="middle" font-family="ui-monospace, monospace" font-size="7" fill="#3B82F6" opacity="0.3">SPF</text>
+    <text x="-92" y="98" text-anchor="middle" font-family="ui-monospace, monospace" font-size="7" fill="#3B82F6" opacity="0.3">PERF</text>
+
+    <!-- Center target -->
+    <circle cx="0" cy="0" r="12" fill="#0EA5E9" opacity="0.08" filter="url(#core-f)"/>
+    <circle cx="0" cy="0" r="6" fill="#0EA5E9" opacity="0.5" filter="url(#glow-f)"/>
+    <circle cx="0" cy="0" r="3" fill="#38BDF8" opacity="0.8"/>
+    <circle cx="0" cy="0" r="1.5" fill="#ffffff" opacity="0.95"/>
+
+    <!-- Score arc data points -->
+    <circle cx="78" cy="15" r="2" fill="#0EA5E9" opacity="0.5" filter="url(#glow-f)"/>
+    <circle cx="55" cy="57" r="1.5" fill="#3B82F6" opacity="0.35"/>
+    <circle cx="-10" cy="80" r="1.5" fill="#0EA5E9" opacity="0.3"/>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="190" text-anchor="middle" font-family="system-ui, -apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="44" font-weight="600" fill="#E2E8F0" letter-spacing="-1">hostinginfo.gg</text>
+
+  <!-- Subtitle -->
+  <text x="600" y="222" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Monaco, monospace" font-size="13" fill="#475569" letter-spacing="4">DOMAIN SECURITY · PERFORMANCE INTELLIGENCE</text>
+
+  <!-- Accent line -->
+  <rect x="440" y="240" width="320" height="1" rx="0.5" fill="url(#accent)" opacity="0.25"/>
+
+  <!-- Stats pill -->
+  <rect x="445" y="252" width="310" height="22" rx="11" fill="#0EA5E9" fill-opacity="0.08" stroke="#0EA5E9" stroke-opacity="0.2" stroke-width="0.75"/>
+  <text x="600" y="267" text-anchor="middle" font-family="ui-monospace, 'SF Mono', Monaco, monospace" font-size="10" fill="#0EA5E9" opacity="0.8">11 probe modules · 39 libraries · 44 test suites</text>
+
+  <!-- Bottom accent -->
+  <rect x="0" y="298" width="1200" height="2" fill="url(#accent)" opacity="0.15"/>
+</svg>

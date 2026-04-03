@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Capture lint/type/build baseline (informational)
+        run: npm run quality:baseline
+        continue-on-error: true
+
+      - name: Verify quality gates
+        run: npm run ci:verify
+
+      - name: Generate full lint report (informational)
+        if: always()
+        run: npm run lint:report
+        continue-on-error: true
+
+      - name: Upload quality artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: quality-artifacts-${{ github.run_id }}
+          path: |
+            tmp/lint-reports/
+            tmp/quality-baseline/
+            tmp/eslint-report.json
+          if-no-files-found: warn

@@ -1,0 +1,985 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@700&display=swap");
+/* @import './browser-optimizations.css'; */ /* DISABLED - Causes visual issues with mobile animations and Firefox backdrop filters */
+@import "./browser-optimizations-safe.css"; /* SAFE optimizations - opt-in only, zero visual changes */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core Colors - Midnight Indigo Theme */
+    --background: 0 0% 100%; /* White background */
+    --foreground: 249 47% 20%; /* #312e81 - Deep indigo text */
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 249 47% 20%; /* #312e81 */
+    --popover: 0 0% 100%; /* White popover */
+    --popover-foreground: 249 47% 20%; /* #312e81 */
+    --primary: 243 75% 59%; /* #4f46e5 - Midnight indigo */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 244 58% 61%; /* #6366f1 - Lighter indigo */
+    --secondary-foreground: 0 0% 100%; /* White text on secondary */
+    --muted: 244 55% 97%; /* #f5f3ff - Very light indigo */
+    --muted-foreground: 243 47% 35%; /* Muted indigo text */
+    --accent: 244 64% 71%; /* #818cf8 - Light indigo accent */
+    --accent-foreground: 249 47% 20%; /* Dark text on accent */
+    --destructive: 0 84% 60%; /* Red for destructive */
+    --destructive-foreground: 0 0% 100%; /* White text */
+    --border: 244 48% 88%; /* #e0e7ff - Light indigo border */
+    --input: 244 48% 88%; /* #e0e7ff */
+    --ring: 243 75% 59%; /* #4f46e5 - Focus ring */
+
+    /* Extended Colors - Midnight Indigo */
+    --chart-1: 243 75% 59%; /* Primary indigo */
+    --chart-2: 244 58% 61%; /* Secondary indigo */
+    --chart-3: 244 64% 71%; /* Accent indigo */
+    --chart-4: 244 55% 85%; /* Light indigo */
+    --chart-5: 244 55% 97%; /* Very light indigo */
+
+    /* Sidebar Colors - Midnight Indigo */
+    --sidebar: 244 55% 97%; /* #f5f3ff - Light indigo */
+    --sidebar-foreground: 249 47% 20%; /* #312e81 - Deep indigo */
+    --sidebar-primary: 243 75% 59%; /* #4f46e5 - Primary indigo */
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 244 64% 71%; /* #818cf8 - Light accent */
+    --sidebar-accent-foreground: 249 47% 20%;
+    --sidebar-border: 244 48% 88%; /* #e0e7ff */
+    --sidebar-ring: 243 75% 59%; /* #4f46e5 */
+
+    /* Typography */
+    --font-sans:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-serif: ui-serif, Georgia, "Times New Roman", serif;
+    --font-mono:
+      ui-monospace, "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas,
+      "Courier New", monospace;
+
+    /* Border Radius */
+    --radius: 0.5rem;
+
+    /* Shadows */
+    --shadow-2xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0 1px 3px 0px hsl(0 0% 0% / 0.05);
+    --shadow-sm:
+      0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow:
+      0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 1px 2px -1px hsl(0 0% 0% / 0.1);
+    --shadow-md:
+      0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg:
+      0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 4px 6px -1px hsl(0 0% 0% / 0.1);
+    --shadow-xl:
+      0 1px 3px 0px hsl(0 0% 0% / 0.1), 0 8px 10px -1px hsl(0 0% 0% / 0.1);
+    --shadow-2xl: 0 1px 3px 0px hsl(0 0% 0% / 0.25);
+  }
+
+  .dark {
+    /* Core Colors - Dark Mode (Discord-style charcoal) */
+    --background: 220 13% 18%; /* #2b2d31 - Discord dark background */
+    --foreground: 210 11% 96%; /* #f2f3f5 - Discord light text */
+    --card: 220 13% 21%; /* #313338 - Discord card/elevated */
+    --card-foreground: 210 11% 96%; /* #f2f3f5 */
+    --popover: 220 13% 18%; /* #2b2d31 */
+    --popover-foreground: 210 11% 96%; /* #f2f3f5 */
+    --primary: 235 86% 65%; /* #5865f2 - Discord blurple */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+    --secondary: 220 13% 28%; /* #404249 - Discord secondary */
+    --secondary-foreground: 210 11% 96%;
+    --muted: 220 13% 28%; /* #404249 */
+    --muted-foreground: 220 9% 46%; /* #80848e - Discord muted text */
+    --accent: 220 13% 28%; /* #404249 */
+    --accent-foreground: 210 11% 96%;
+    --destructive: 359 82% 59%; /* #ed4245 - Discord red */
+    --destructive-foreground: 0 0% 100%;
+    --border: 220 13% 28%; /* #404249 - Subtle borders */
+    --input: 220 13% 28%; /* #404249 */
+    --ring: 235 86% 65%; /* #5865f2 - Discord blurple */
+
+    /* Extended Colors - Dark Mode */
+    --chart-1: 0 0% 45%;
+    --chart-2: 0 0% 60%;
+    --chart-3: 0 0% 75%;
+    --chart-4: 0 0% 90%;
+    --chart-5: 0 0% 100%;
+
+    /* Sidebar Colors - Dark Mode */
+    --sidebar: 0 0% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 0 0% 98%;
+    --sidebar-primary-foreground: 0 0% 9%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 0 0% 83%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* Anti-flickering optimizations */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* ========================================
+     UNIVERSAL PERFORMANCE OPTIMIZATIONS
+     Works with or without GPU acceleration
+     ======================================== */
+
+  /* Respect user motion preferences - CRITICAL for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* CSS Containment for performance isolation - prevents unnecessary reflows */
+  .card,
+  [class*="Card"],
+  [data-radix-card] {
+    contain: layout style paint;
+  }
+
+  button,
+  [role="button"],
+  .button,
+  [class*="Button"] {
+    contain: layout style;
+  }
+
+  /* Prevent layout shifts and flickering */
+  img,
+  video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Optimize lazy-loaded images */
+  img[loading="lazy"] {
+    content-visibility: auto;
+  }
+
+  /* Optimize off-screen content (Chrome/Edge only) */
+  @supports (content-visibility: auto) {
+    section:not(:first-of-type) {
+      content-visibility: auto;
+      contain-intrinsic-size: 0 500px;
+    }
+  }
+
+  /* Smooth scrolling only if motion is preferred */
+  @media (prefers-reduced-motion: no-preference) {
+    html {
+      scroll-behavior: smooth;
+    }
+  }
+
+  /* Touch optimization for mobile devices */
+  @media (hover: none) and (pointer: coarse) {
+    button,
+    [role="button"],
+    a {
+      min-height: 44px;
+      min-width: 44px;
+      touch-action: manipulation;
+    }
+  }
+
+  /* ========================================
+     FIREFOX-SPECIFIC OPTIMIZATIONS
+     Firefox has severe performance issues with certain CSS properties
+     ======================================== */
+
+  /* Disable backdrop-filter in Firefox (causes extreme lag) */
+  @-moz-document url-prefix() {
+    *[class*="backdrop"],
+    .backdrop-blur-sm,
+    .backdrop-blur-md,
+    .backdrop-blur-lg,
+    .backdrop-blur-xl {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      /* Use solid background instead */
+      background-color: hsl(var(--background) / 0.95) !important;
+    }
+  }
+
+  /* Simplify shadows in Firefox (multiple shadows cause lag) */
+  @-moz-document url-prefix() {
+    .shadow-lg,
+    .shadow-xl,
+    .shadow-2xl {
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) !important;
+    }
+
+    .shadow-md {
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1) !important;
+    }
+  }
+
+  /* Optional gradient simplification in Firefox (opt-in via ff-degrade-gradient) */
+  @-moz-document url-prefix() {
+    html.is-firefox .ff-degrade-gradient.bg-gradient-to-br,
+    html.is-firefox .ff-degrade-gradient.bg-gradient-to-r,
+    html.is-firefox .ff-degrade-gradient.bg-gradient-to-tr,
+    html.is-firefox .ff-degrade-gradient.bg-gradient-to-b,
+    html.is-firefox .ff-degrade-gradient.bg-gradient-to-l,
+    html.is-firefox .ff-degrade-gradient.bg-gradient-to-tl,
+    html.is-firefox .ff-degrade-gradient.bg-gradient-to-bl {
+      /* Use solid color fallback */
+      background-image: none !important;
+    }
+  }
+
+  /* Disable will-change in Firefox (causes more harm than good) */
+  @-moz-document url-prefix() {
+    * {
+      will-change: auto !important;
+    }
+  }
+
+  /* Simplify transforms in Firefox */
+  @-moz-document url-prefix() {
+    .transform,
+    [class*="transform"] {
+      transform: none !important;
+    }
+
+    /* Only allow simple transforms on hover */
+    button:hover,
+    [role="button"]:hover {
+      transform: translateY(-1px) !important;
+    }
+  }
+
+  /* GPU acceleration for smooth animations (when available) */
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+  .animate-in {
+    animation-duration: 0.2s;
+    animation-fill-mode: both;
+  }
+
+  .fade-in {
+    animation-name: fadeIn;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-slow {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.85;
+    }
+  }
+}
+
+/* Unless told otherwise, keep it for smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Vertical text for floating tab button */
+.writing-mode-vertical-rl {
+  writing-mode: vertical-rl;
+}
+
+/* Logo pop-in animation */
+@keyframes pop-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-pop-in {
+  animation: pop-in 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* Animated gradient for dashboard button */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  animation: gradient 3s ease infinite;
+}
+
+/* Slow spin animation for logo glow */
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+/* Scoped Pro Dashboard black-glass palette (matches Favorites tab) */
+.pro-dashboard-theme {
+  --background: 223 45% 7%;
+  --foreground: 220 24% 96%;
+  --card: 220 25% 16%;
+  --card-foreground: 220 24% 96%;
+  --popover: 220 25% 14%;
+  --popover-foreground: 220 24% 96%;
+  --muted: 220 17% 20%;
+  --muted-foreground: 220 15% 72%;
+  --accent: 258 44% 25%;
+  --accent-foreground: 220 24% 96%;
+  --secondary: 220 19% 24%;
+  --secondary-foreground: 220 24% 96%;
+  --border: 220 17% 34%;
+  --input: 220 17% 34%;
+  background:
+    radial-gradient(
+      1200px 500px at 0% 0%,
+      rgb(124 58 237 / 0.18),
+      transparent 60%
+    ),
+    radial-gradient(
+      1000px 420px at 100% -10%,
+      rgb(6 182 212 / 0.14),
+      transparent 58%
+    ),
+    linear-gradient(180deg, #080b14 0%, #070a12 100%);
+}
+
+.pro-dashboard-theme [class*="bg-card"] {
+  background-color: rgb(31 41 55 / 0.52);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 12px 30px rgb(3 7 18 / 0.35);
+}
+
+.pro-dashboard-theme [role="tablist"] {
+  border: 1px solid rgb(75 85 99 / 0.78);
+  background-color: rgb(17 24 39 / 0.74);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.pro-dashboard-theme [role="tab"][data-state="active"] {
+  background-color: rgb(124 58 237 / 0.3);
+  color: rgb(243 244 246);
+}
+
+.pro-dashboard-theme input,
+.pro-dashboard-theme textarea,
+.pro-dashboard-theme [role="combobox"] {
+  border-color: rgb(75 85 99 / 0.78);
+  background-color: rgb(17 24 39 / 0.78);
+  color: rgb(243 244 246);
+}
+
+.pro-dashboard-theme input::placeholder,
+.pro-dashboard-theme textarea::placeholder {
+  color: rgb(156 163 175 / 0.95);
+}
+
+/* Float animation for background orbs */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Badge float animation - ToyFight.co inspired */
+@keyframes badge-float {
+  0%,
+  100% {
+    transform: translateY(0px) scale(1);
+  }
+  25% {
+    transform: translateY(-8px) scale(1.02);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.01);
+  }
+  75% {
+    transform: translateY(-10px) scale(1.03);
+  }
+}
+
+.animate-badge-float {
+  animation: badge-float 4s ease-in-out infinite;
+}
+
+/* Text shimmer animation */
+@keyframes text-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-text-shimmer {
+  background-size: 200% auto;
+  animation: text-shimmer 3s linear infinite;
+}
+
+@keyframes emerald-fallback-shell {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: translateY(-5px) scale(1.04);
+    opacity: 1;
+  }
+}
+
+@keyframes emerald-fallback-core {
+  0%,
+  100% {
+    transform: scale(0.92);
+    filter: brightness(0.9);
+  }
+  50% {
+    transform: scale(1.08);
+    filter: brightness(1.2);
+  }
+}
+
+.animate-emerald-fallback-shell {
+  animation: emerald-fallback-shell 2.8s ease-in-out infinite;
+}
+
+.animate-emerald-fallback-core {
+  animation: emerald-fallback-core 1.7s ease-in-out infinite;
+}
+
+/* DBZ Power-Up Float Animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* DBZ Energy Spark Animation */
+@keyframes spark {
+  0% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translateY(-80px);
+  }
+}
+
+/* ========================================
+   CROSS-BROWSER COMPATIBILITY & MOBILE
+   ======================================== */
+
+/* 3D Transform Utilities with vendor prefixes */
+.perspective-1000 {
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+.preserve-3d {
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Cross-browser gradient text support */
+.gradient-text {
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Prevent text cutoff on all browsers (descenders like g, j, p, q, y) */
+.prevent-cutoff {
+  line-height: 1.2;
+  padding-bottom: 0.15em;
+  overflow: visible;
+  display: block;
+}
+
+/* Mobile-optimized text rendering */
+@media (max-width: 768px) {
+  .hero-text {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+  }
+
+  /* Prevent horizontal scroll on mobile */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Ensure touch targets are large enough */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Ensure animations work on all browsers */
+@supports not (backdrop-filter: blur(10px)) {
+  .backdrop-blur-sm {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  .backdrop-blur-md {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .backdrop-blur-lg {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Fix for Safari gradient text rendering */
+@supports (-webkit-background-clip: text) {
+  .gradient-text {
+    background-attachment: scroll;
+  }
+}
+
+/* Prevent layout shift during animations */
+.animation-container {
+  contain: layout style;
+  will-change: transform, opacity;
+}
+
+/* GPU acceleration for smooth animations on all devices */
+.gpu-accelerated {
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  perspective: 1000px;
+  -webkit-perspective: 1000px;
+}
+
+/* Fix for iOS Safari viewport height */
+@supports (-webkit-touch-callout: none) {
+  .min-h-screen {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Smooth scrolling for all browsers */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Prevent text size adjustment on mobile */
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Fix for Firefox gradient text */
+@-moz-document url-prefix() {
+  .gradient-text {
+    background-clip: text;
+    -moz-background-clip: text;
+  }
+
+  html.is-firefox .ff-gradient-text {
+    background-clip: text;
+    -moz-background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
+
+/* Ensure proper rendering on high DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Fix for Edge/IE gradient text */
+@supports (-ms-ime-align: auto) {
+  .gradient-text {
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+}
+
+/* Layers Icon Stacking Animation */
+@keyframes layer-stack {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-2px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes layer-separate {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 2px 4px rgba(6, 182, 212, 0.4))
+      drop-shadow(0 -2px 4px rgba(6, 182, 212, 0.2));
+  }
+}
+
+.layers-icon-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Trigger animation when parent button is hovered */
+.group:hover .layers-icon-hover {
+  animation:
+    layer-stack 0.6s ease-in-out,
+    layer-separate 0.6s ease-in-out;
+}
+
+/* ========================================
+   WEB ARCHIVES ICON ANIMATIONS - 5 UNIQUE STYLES
+   ======================================== */
+
+/* ANIMATION 1: LID FLIP (User's Favorite!) */
+@keyframes archive-lid-flip {
+  0% {
+    transform: perspective(400px) rotateX(0deg);
+  }
+  25% {
+    transform: perspective(400px) rotateX(-90deg) translateY(-2px);
+  }
+  50% {
+    transform: perspective(400px) rotateX(-180deg) translateY(-4px);
+  }
+  75% {
+    transform: perspective(400px) rotateX(-90deg) translateY(-2px);
+  }
+  100% {
+    transform: perspective(400px) rotateX(0deg);
+  }
+}
+
+@keyframes archive-lid-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 4px 8px rgba(59, 130, 246, 0.6));
+  }
+}
+
+.archive-icon-lid-flip {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .archive-icon-lid-flip {
+  animation:
+    archive-lid-flip 0.8s ease-in-out,
+    archive-lid-glow 0.8s ease-in-out;
+}
+
+/* ANIMATION 2: BOUNCE & SHAKE (Excited Archive!) */
+@keyframes archive-bounce-shake {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  10% {
+    transform: translateY(-8px) rotate(-5deg);
+  }
+  20% {
+    transform: translateY(-12px) rotate(5deg);
+  }
+  30% {
+    transform: translateY(-8px) rotate(-3deg);
+  }
+  40% {
+    transform: translateY(-4px) rotate(3deg);
+  }
+  50% {
+    transform: translateY(0) rotate(0deg);
+  }
+}
+
+@keyframes archive-bounce-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  20% {
+    filter: drop-shadow(0 8px 16px rgba(59, 130, 246, 0.8));
+  }
+}
+
+.archive-icon-bounce-shake {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .archive-icon-bounce-shake {
+  animation:
+    archive-bounce-shake 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+    archive-bounce-glow 0.7s ease-in-out;
+}
+
+/* ANIMATION 3: SPIN & ZOOM (3D Rotation) */
+@keyframes archive-spin-zoom {
+  0% {
+    transform: perspective(600px) rotateY(0deg) scale(1);
+  }
+  50% {
+    transform: perspective(600px) rotateY(180deg) scale(1.3);
+  }
+  100% {
+    transform: perspective(600px) rotateY(360deg) scale(1);
+  }
+}
+
+@keyframes archive-spin-pulse {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(59, 130, 246, 0.9))
+      drop-shadow(0 0 24px rgba(59, 130, 246, 0.5));
+  }
+}
+
+.archive-icon-spin-zoom {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .archive-icon-spin-zoom {
+  animation:
+    archive-spin-zoom 0.9s ease-in-out,
+    archive-spin-pulse 0.9s ease-in-out;
+}
+
+/* ANIMATION 4: WAVE FLOAT (Gentle Floating) */
+@keyframes archive-wave-float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  25% {
+    transform: translateY(-4px) translateX(2px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-6px) translateX(0) rotate(0deg);
+  }
+  75% {
+    transform: translateY(-4px) translateX(-2px) rotate(-5deg);
+  }
+}
+
+@keyframes archive-wave-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 2px 4px rgba(59, 130, 246, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 6px 12px rgba(59, 130, 246, 0.6))
+      drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+  }
+}
+
+.archive-icon-wave-float {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .archive-icon-wave-float {
+  animation:
+    archive-wave-float 1.2s ease-in-out 2,
+    archive-wave-glow 1.2s ease-in-out 2;
+}
+
+/* ANIMATION 5: PULSE EXPAND (Heartbeat Effect) */
+@keyframes archive-pulse-expand {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(1.15);
+  }
+  20% {
+    transform: scale(1.05);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  40% {
+    transform: scale(1);
+  }
+}
+
+@keyframes archive-pulse-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 0 transparent);
+  }
+  30% {
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.8))
+      drop-shadow(0 0 16px rgba(59, 130, 246, 0.6))
+      drop-shadow(0 0 24px rgba(59, 130, 246, 0.4));
+  }
+}
+
+.archive-icon-pulse-expand {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.group:hover .archive-icon-pulse-expand {
+  animation:
+    archive-pulse-expand 0.8s ease-in-out,
+    archive-pulse-glow 0.8s ease-in-out;
+}
+
+/* ========================================
+   TIER SYSTEM ANIMATIONS
+   ======================================== */
+
+/* Legendary Tier Pulse Animation */
+@keyframes legendary-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 16px rgba(249, 115, 22, 0.6);
+    border-color: #f97316;
+  }
+  50% {
+    box-shadow:
+      0 0 24px rgba(249, 115, 22, 0.8),
+      0 0 32px rgba(249, 115, 22, 0.4);
+    border-color: #fb923c;
+  }
+}
+
+/* Tier unlock celebration animation */
+@keyframes tier-unlock-celebration {
+  0% {
+    transform: scale(0.8) rotate(-5deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+/* Tier border glow animation */
+@keyframes tier-glow {
+  0%,
+  100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.2);
+  }
+}

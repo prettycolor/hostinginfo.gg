@@ -1,0 +1,21 @@
+CREATE TABLE `performance_history` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`domain` varchar(255) NOT NULL,
+	`scan_date` timestamp NOT NULL DEFAULT (now()),
+	`mobile_score` int NOT NULL,
+	`desktop_score` int NOT NULL,
+	`mobile_fcp` decimal(10,2),
+	`mobile_lcp` decimal(10,2),
+	`mobile_tbt` decimal(10,2),
+	`mobile_cls` decimal(10,4),
+	`mobile_speed_index` decimal(10,2),
+	`desktop_fcp` decimal(10,2),
+	`desktop_lcp` decimal(10,2),
+	`desktop_tbt` decimal(10,2),
+	`desktop_cls` decimal(10,4),
+	`desktop_speed_index` decimal(10,2),
+	`pages_scanned` text,
+	`page_scores` text,
+	`created_at` timestamp DEFAULT (now()),
+	CONSTRAINT `performance_history_id` PRIMARY KEY(`id`)
+);

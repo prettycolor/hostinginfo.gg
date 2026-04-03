@@ -1,0 +1,77 @@
+# HostingInfo - Robots.txt
+# Allow all search engines to crawl the site
+
+User-agent: *
+Allow: /
+
+# Disallow admin/auth pages
+Disallow: /api/
+Disallow: /login
+Disallow: /signup
+Disallow: /account-settings
+Disallow: /admin
+
+# Disallow demo/preview pages (not meant for indexing)
+Disallow: /demo/
+Disallow: /tooltip-demo
+Disallow: /avatar-icon-options
+Disallow: /security-tab-demo
+Disallow: /tooltip-hub-demo
+Disallow: /dashboard-demo
+Disallow: /home-with-dashboard
+Disallow: /header-preview
+Disallow: /dashboard-button-styles
+Disallow: /ddc-intro-demo
+Disallow: /transition-demo
+Disallow: /transition-blend-demo
+Disallow: /auth-button-concepts
+Disallow: /auth-icon-preview
+Disallow: /animated-icon-packs
+Disallow: /easter-egg-demo
+Disallow: /guide-widget-concepts
+Disallow: /guide-image-effects
+Disallow: /ddc-icon-effects
+Disallow: /dashboard-preview
+Disallow: /fantasy-leveling-demo
+Disallow: /gamification-showcase
+Disallow: /unlock-demo
+Disallow: /max-level-demo
+Disallow: /full-dashboard-demo
+Disallow: /asset-preview
+Disallow: /unlock-notification-demo
+Disallow: /intelligence-preview
+Disallow: /intelligence-comprehensive
+Disallow: /intelligence-modal-concepts
+Disallow: /intelligence-demos
+Disallow: /intelligence-demo-tab
+Disallow: /intelligence-demo-accordion
+Disallow: /intelligence-demo-hybrid
+Disallow: /intelligence-demo-dashboard
+Disallow: /intelligence-demo
+Disallow: /intelligence-orchestrator-demo
+Disallow: /accuracy-demo
+Disallow: /button-styles
+Disallow: /button-test
+Disallow: /design-systems
+Disallow: /button-colors
+Disallow: /dashboard-card-styles-preview
+Disallow: /intelligence-icon-styles-preview
+Disallow: /intelligence-icon-mega-list
+Disallow: /archive-animation-preview
+Disallow: /profile-avatar-styles-preview
+Disallow: /tier-borders-demo
+Disallow: /leaderboard-icon-options
+Disallow: /gem-icon-styles-preview
+Disallow: /gem-3d-showcase
+Disallow: /gem-3d-test
+Disallow: /chaos-emerald-animations
+Disallow: /leaderboard-title-styles
+Disallow: /leaderboard-title-styles-advanced
+Disallow: /flame-icon-preview
+Disallow: /flame-alternatives-demo
+Disallow: /ember-trail-variations
+Disallow: /toast-demo
+Disallow: /toast-styles-comparison
+
+# Sitemap
+Sitemap: https://hostinginfo.gg/sitemap.xml

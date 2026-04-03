@@ -1,0 +1,392 @@
+/**
+ * SAFE BROWSER OPTIMIZATIONS
+ * 
+ * CRITICAL RULES:
+ * - NO automatic CSS rules that apply to all elements
+ * - NO !important flags (except for critical accessibility)
+ * - NO media queries that change visual appearance
+ * - NO browser-specific rules that change visuals
+ * - ALL optimizations are OPT-IN via explicit classes
+ * - ZERO visual changes to animations, effects, or layout
+ * 
+ * Purpose: Improve performance through GPU acceleration and rendering optimizations
+ * WITHOUT changing how anything looks or behaves.
+ */
+
+/* ============================================
+   GPU ACCELERATION (Opt-in)
+   ============================================ */
+
+/**
+ * Force GPU acceleration for smooth animations
+ * Apply to elements that animate frequently
+ * Usage: Add 'gpu-accelerate' class to animated elements
+ */
+.gpu-accelerate {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/**
+ * GPU acceleration for opacity animations
+ * Usage: Add to elements that fade in/out
+ */
+.gpu-accelerate-opacity {
+  will-change: opacity;
+}
+
+/**
+ * GPU acceleration for transform animations
+ * Usage: Add to elements that move, scale, or rotate
+ */
+.gpu-accelerate-transform {
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* ============================================
+   RENDERING OPTIMIZATION (Opt-in)
+   ============================================ */
+
+/**
+ * CSS Containment for isolated components
+ * Tells browser this element's layout/paint doesn't affect outside
+ * Usage: Add to cards, modals, dialogs
+ */
+.optimize-rendering {
+  contain: layout paint;
+}
+
+/**
+ * Strict containment for completely isolated components
+ * Usage: Add to independent widgets or components
+ */
+.optimize-rendering-strict {
+  contain: strict;
+}
+
+/**
+ * Content containment for dynamic content areas
+ * Usage: Add to content areas that change frequently
+ */
+.optimize-rendering-content {
+  contain: content;
+}
+
+/* ============================================
+   SMOOTH SCROLLING (Opt-in)
+   ============================================ */
+
+/**
+ * Smooth scrolling for containers
+ * Usage: Add to scrollable containers
+ */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch; /* iOS momentum scrolling */
+}
+
+/**
+ * Optimize scroll performance
+ * Usage: Add to containers with heavy content
+ */
+.optimize-scroll {
+  overflow: auto;
+  overscroll-behavior: contain;
+  scroll-snap-type: y proximity;
+}
+
+/* ============================================
+   FONT RENDERING (Opt-in)
+   ============================================ */
+
+/**
+ * Optimize font rendering for better performance
+ * Usage: Add to text-heavy components
+ */
+.optimize-fonts {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/**
+ * Fast font rendering (less quality, more speed)
+ * Usage: Add to non-critical text areas
+ */
+.optimize-fonts-fast {
+  text-rendering: optimizeSpeed;
+}
+
+/* ============================================
+   IMAGE RENDERING (Opt-in)
+   ============================================ */
+
+/**
+ * Optimize image rendering
+ * Usage: Add to image containers
+ */
+.optimize-images {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/**
+ * Smooth image scaling
+ * Usage: Add to images that scale
+ */
+.optimize-images-smooth {
+  image-rendering: auto;
+}
+
+/* ============================================
+   LAYER PROMOTION (Opt-in)
+   ============================================ */
+
+/**
+ * Promote element to its own layer for better compositing
+ * Usage: Add to elements that animate independently
+ */
+.promote-layer {
+  transform: translateZ(0);
+  isolation: isolate;
+}
+
+/**
+ * Create stacking context for complex components
+ * Usage: Add to components with multiple animated children
+ */
+.create-stacking-context {
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+
+/**
+ * Respect user's motion preferences
+ * This is the ONLY rule that applies automatically
+ * It's for accessibility and respects user choice
+ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  /* Keep will-change for performance even with reduced motion */
+  .gpu-accelerate,
+  .gpu-accelerate-transform,
+  .gpu-accelerate-opacity {
+    will-change: auto;
+  }
+}
+
+/* ============================================
+   BROWSER-SPECIFIC OPTIMIZATIONS
+   ============================================ */
+
+/**
+ * Safari-specific optimizations (opt-in)
+ * Usage: Add 'safari-optimize' class when needed
+ */
+.safari-optimize {
+  -webkit-transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+}
+
+/**
+ * Firefox-specific optimizations (opt-in)
+ * Usage: Add 'firefox-optimize' class when needed
+ */
+.firefox-optimize {
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/**
+ * Chrome-specific optimizations (opt-in)
+ * Usage: Add 'chrome-optimize' class when needed
+ */
+.chrome-optimize {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ============================================
+   SCROLLBAR STYLING (NO VISUAL CHANGES)
+   ============================================ */
+
+/**
+ * Thin scrollbars for Firefox (opt-in)
+ * Usage: Add 'thin-scrollbar' class
+ */
+.thin-scrollbar {
+  scrollbar-width: thin;
+}
+
+/**
+ * Custom scrollbar for Webkit browsers (opt-in)
+ * Usage: Add 'custom-scrollbar' class
+ * Note: Maintains existing color scheme
+ */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* ============================================
+   PERFORMANCE HINTS FOR ANIMATIONS
+   ============================================ */
+
+/**
+ * Optimize for animations that will start soon
+ * Usage: Add before animation starts, remove after
+ */
+.will-animate {
+  will-change: transform, opacity;
+}
+
+/**
+ * Optimize for scroll animations
+ * Usage: Add to elements that animate on scroll
+ */
+.will-animate-scroll {
+  will-change: transform;
+}
+
+/**
+ * Clean up will-change after animation
+ * Usage: Add after animation completes
+ */
+.animation-complete {
+  will-change: auto;
+}
+
+/* ============================================
+   TOUCH OPTIMIZATION (Mobile)
+   ============================================ */
+
+/**
+ * Optimize touch interactions (opt-in)
+ * Usage: Add to interactive elements on mobile
+ */
+.optimize-touch {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/**
+ * Fast tap response (opt-in)
+ * Usage: Add to buttons and links
+ */
+.fast-tap {
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+/* ============================================
+   COMPOSITE LAYERS (Advanced)
+   ============================================ */
+
+/**
+ * Force composite layer for complex animations
+ * Usage: Add to elements with multiple simultaneous animations
+ */
+.force-composite {
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+}
+
+/**
+ * Optimize for 3D transforms
+ * Usage: Add to elements using 3D transforms
+ */
+.optimize-3d {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/**
+ * Prevent layout shift during loading
+ * Usage: Add to containers that load content dynamically
+ */
+.prevent-layout-shift {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/**
+ * Optimize for off-screen content
+ * Usage: Add to content below the fold
+ */
+.optimize-offscreen {
+  content-visibility: auto;
+}
+
+/**
+ * Hardware acceleration for video/canvas
+ * Usage: Add to video or canvas elements
+ */
+.optimize-media {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* ============================================
+   NOTES FOR DEVELOPERS
+   ============================================ */
+
+/**
+ * HOW TO USE THESE CLASSES:
+ * 
+ * 1. GPU Acceleration:
+ *    <div className="gpu-accelerate">Animated content</div>
+ * 
+ * 2. Rendering Optimization:
+ *    <div className="optimize-rendering">Card content</div>
+ * 
+ * 3. Smooth Scrolling:
+ *    <div className="smooth-scroll">Scrollable content</div>
+ * 
+ * 4. Font Optimization:
+ *    <div className="optimize-fonts">Text content</div>
+ * 
+ * 5. Before Animation:
+ *    <div className="will-animate">Content to animate</div>
+ * 
+ * 6. After Animation:
+ *    <div className="animation-complete">Animated content</div>
+ * 
+ * IMPORTANT:
+ * - Only add classes where needed
+ * - Don't add to every element
+ * - Test performance before/after
+ * - Remove will-change after animations complete
+ * - Use browser DevTools to verify improvements
+ */

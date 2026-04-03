@@ -1,0 +1,1 @@
+ALTER TABLE `monitoring_settings` ADD `client_tag` varchar(255);

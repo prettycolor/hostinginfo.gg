@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "strict": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true
+  },
+  "include": [
+    "src/server/lib/request-auth.ts",
+    "src/server/lib/auth.ts",
+    "src/server/lib/session-store.ts"
+  ]
+}

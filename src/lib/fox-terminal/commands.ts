@@ -1,0 +1,160 @@
+import {
+  useAchievements,
+  type Achievement,
+} from "@/lib/fox-terminal/achievements";
+
+export const commands: Record<string, () => string[]> = {
+  help: () => [
+    "",
+    "╔═══════════════════════════════════════════════════════════╗",
+    "║  🎮 AVAILABLE COMMANDS                                     ║",
+    "╚═══════════════════════════════════════════════════════════╝",
+    "",
+    "💬 CORE COMMANDS:",
+    "  help          - Show this help message",
+    "  about         - About HostingInfo",
+    "  services      - Our services",
+    "  contact       - Contact us",
+    "  clear         - Clear terminal",
+    "  exit          - Close terminal",
+    "",
+    "☕ COFFEE COMMANDS:",
+    "  brew          - Brew a fresh cup of coffee (animated)",
+    "  roast         - Roast coffee beans (animated)",
+    "  espresso      - Make a quick espresso shot (animated)",
+    "",
+    "💻 HACKER COMMANDS:",
+    "  hack          - Hacker mode (animated)",
+    "  matrix        - Enter the Matrix (animated)",
+    "  sudo          - Superuser commands (animated)",
+    "",
+    "🎮 GAMING COMMANDS:",
+    "  konami        - Try the Konami code",
+    "  ff7           - Final Fantasy VII",
+    "  mario         - Super Mario",
+    "  sonic         - Sonic the Hedgehog (animated 3D)",
+    "  emerald       - Chaos Emerald (animated 3D)",
+    "  crash         - Crash Bandicoot",
+    "",
+    "🎁 SECRET COMMANDS:",
+    "  easter        - Show easter egg hints",
+    "  achievements  - View your achievements",
+    "  secret        - Find the secret",
+    "",
+    "Type any command to try it out!",
+    "",
+  ],
+
+  about: () => [
+    "",
+    "╔═══════════════════════════════════════════════════════════╗",
+    "║  🦊 ABOUT HOSTINGINFO                                     ║",
+    "╚═══════════════════════════════════════════════════════════╝",
+    "",
+    "HostingInfo is your ultimate domain intelligence platform.",
+    "",
+    "✅ Domain Analysis & Monitoring",
+    "✅ Security Scanning",
+    "✅ Performance Metrics",
+    "✅ Competitive Intelligence",
+    "✅ Real-time Alerts",
+    "",
+    "Built with ❤️ by the HostingInfo team",
+    "",
+  ],
+
+  services: () => [
+    "",
+    "╔═══════════════════════════════════════════════════════════╗",
+    "║  🚀 OUR SERVICES                                          ║",
+    "╚═══════════════════════════════════════════════════════════╝",
+    "",
+    "🔍 Domain Intelligence",
+    "   - Comprehensive domain analysis",
+    "   - Historical data tracking",
+    "   - Competitive insights",
+    "",
+    "🛡️ Security Monitoring",
+    "   - Real-time threat detection",
+    "   - SSL/TLS analysis",
+    "   - Vulnerability scanning",
+    "",
+    "📊 Performance Analytics",
+    "   - Speed testing",
+    "   - Uptime monitoring",
+    "   - SEO analysis",
+    "",
+    'Type "contact" to get in touch!',
+    "",
+  ],
+
+  contact: () => [
+    "",
+    "╔═══════════════════════════════════════════════════════════╗",
+    "║  📧 CONTACT US                                            ║",
+    "╚═══════════════════════════════════════════════════════════╝",
+    "",
+    "📧 Email: Info@hostinginfo.gg",
+    "",
+    "We'd love to hear from you!",
+    "",
+  ],
+
+  clear: () => [""],
+
+  exit: () => [
+    "",
+    "👋 Thanks for using HT Terminal!",
+    "Closing in 3... 2... 1...",
+    "",
+  ],
+
+  easter: () => [
+    "",
+    "╔═══════════════════════════════════════════════════════════╗",
+    "║  🥚 EASTER EGG HINTS                                      ║",
+    "╚═══════════════════════════════════════════════════════════╝",
+    "",
+    "🔍 Hidden commands to discover:",
+    "",
+    "☕ Try coffee-related commands",
+    "🦊 Interact with the fox",
+    "💻 Attempt some hacking",
+    "🎮 Classic gaming references",
+    "🌈 Internet memes",
+    "🎵 Music and pop culture",
+    "",
+    'Hint: Try "nyan", "doge", "rickroll"',
+    "Hint: Use arrow keys (Up/Down) for command history",
+    "Hint: Try the Konami code: ↑ ↑ ↓ ↓ ← → ← → B A",
+    "",
+  ],
+
+  achievements: () => {
+    const { achievements, getUnlockedCount, getTotalCount } =
+      useAchievements.getState();
+    const unlocked = Object.values(achievements).filter(
+      (a: Achievement) => a.unlocked,
+    );
+    const total = getTotalCount();
+    const count = getUnlockedCount();
+
+    return [
+      "",
+      "╔═══════════════════════════════════════════════════════════╗",
+      "║  🏆 ACHIEVEMENTS                                          ║",
+      "╚═══════════════════════════════════════════════════════════╝",
+      "",
+      `Progress: ${count}/${total} unlocked`,
+      "",
+      ...unlocked.map(
+        (a: Achievement) => `✅ ${a.icon} ${a.name} - ${a.description}`,
+      ),
+      "",
+      count === total
+        ? "🏆 CONGRATULATIONS! You've unlocked everything!"
+        : "Keep exploring to unlock more!",
+      "",
+    ];
+  },
+};

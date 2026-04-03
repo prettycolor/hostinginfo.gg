@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+set -e
+
+if [ ! -x ./node_modules/.bin/lint-staged ]; then
+  echo "lint-staged is not installed. Run: npm ci"
+  exit 1
+fi
+
+./node_modules/.bin/lint-staged

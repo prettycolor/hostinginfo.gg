@@ -1,0 +1,36 @@
+# Docker Compose — HostingInfo.gg local dev
+# Matches VPS environment (MySQL 8)
+# Usage: docker compose up -d
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: hostinginfo-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-change-local-root-password}
+      MYSQL_DATABASE: hostinginfo
+      MYSQL_USER: hostinginfo
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-change-local-app-password}
+    ports:
+      - "3306:3306"
+    volumes:
+      - hostinginfo_mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    container_name: hostinginfo-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - hostinginfo_redis_data:/data
+
+volumes:
+  hostinginfo_mysql_data:
+  hostinginfo_redis_data:

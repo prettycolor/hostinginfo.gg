@@ -1,0 +1,707 @@
+{
+  "asn_mappings": {
+    "13335": {
+      "provider": "Cloudflare",
+      "category": "CDN",
+      "confidence": 95,
+      "description": "Cloudflare CDN and DDoS protection"
+    },
+    "16509": {
+      "provider": "Amazon Web Services (AWS)",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Amazon Web Services cloud infrastructure"
+    },
+    "14618": {
+      "provider": "Amazon Web Services (AWS)",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Amazon Web Services cloud infrastructure"
+    },
+    "8075": {
+      "provider": "Microsoft Azure",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Microsoft Azure cloud platform"
+    },
+    "15169": {
+      "provider": "Google Cloud Platform (GCP)",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Google Cloud Platform infrastructure"
+    },
+    "396982": {
+      "provider": "Google Cloud Platform (GCP)",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Google Cloud Platform infrastructure"
+    },
+    "14061": {
+      "provider": "DigitalOcean",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "DigitalOcean cloud hosting"
+    },
+    "63949": {
+      "provider": "Linode",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Linode cloud hosting"
+    },
+    "20473": {
+      "provider": "Vultr",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Vultr cloud hosting"
+    },
+    "26496": {
+      "provider": "GoDaddy",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "GoDaddy web hosting"
+    },
+    "46606": {
+      "provider": "GoDaddy",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "GoDaddy web hosting"
+    },
+    "36351": {
+      "provider": "Bluehost",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "Bluehost web hosting"
+    },
+    "46606": {
+      "provider": "Unified Layer (Bluehost/HostGator)",
+      "category": "Shared Hosting",
+      "confidence": 90,
+      "description": "Unified Layer hosting brands"
+    },
+    "21844": {
+      "provider": "ThePlanet / SoftLayer (IBM Cloud)",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "IBM Cloud infrastructure"
+    },
+    "36352": {
+      "provider": "HostGator",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "HostGator web hosting"
+    },
+    "27357": {
+      "provider": "Rackspace",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Rackspace cloud hosting"
+    },
+    "16276": {
+      "provider": "OVH",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "OVH cloud hosting (Europe)"
+    },
+    "24940": {
+      "provider": "Hetzner",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Hetzner cloud hosting (Germany)"
+    },
+    "8560": {
+      "provider": "1&1 IONOS",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "1&1 IONOS web hosting (Europe)"
+    },
+    "8972": {
+      "provider": "1&1 IONOS",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "1&1 IONOS web hosting (Europe)"
+    },
+    "31898": {
+      "provider": "Oracle Cloud",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Oracle Cloud Infrastructure"
+    },
+    "45102": {
+      "provider": "Alibaba Cloud",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Alibaba Cloud (Aliyun)"
+    },
+    "37963": {
+      "provider": "Alibaba Cloud",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Alibaba Cloud (Aliyun)"
+    },
+    "132203": {
+      "provider": "Tencent Cloud",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Tencent Cloud (China)"
+    },
+    "7506": {
+      "provider": "Namecheap",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "Namecheap web hosting"
+    },
+    "26347": {
+      "provider": "DreamHost",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "DreamHost web hosting"
+    },
+    "19318": {
+      "provider": "Interserver",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "Interserver web hosting"
+    },
+    "19871": {
+      "provider": "Network Solutions",
+      "category": "Shared Hosting",
+      "confidence": 90,
+      "description": "Network Solutions hosting"
+    },
+    "22612": {
+      "provider": "Namecheap",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "Namecheap web hosting"
+    },
+    "32244": {
+      "provider": "Liquid Web",
+      "category": "Managed Hosting",
+      "confidence": 95,
+      "description": "Liquid Web managed hosting"
+    },
+    "54290": {
+      "provider": "Hostinger",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "Hostinger web hosting"
+    },
+    "47583": {
+      "provider": "Hostinger",
+      "category": "Shared Hosting",
+      "confidence": 95,
+      "description": "Hostinger web hosting"
+    },
+    "13926": {
+      "provider": "Hurricane Electric",
+      "category": "Colocation",
+      "confidence": 85,
+      "description": "Hurricane Electric data center"
+    },
+    "209": {
+      "provider": "CenturyLink (Lumen)",
+      "category": "ISP/Hosting",
+      "confidence": 80,
+      "description": "CenturyLink/Lumen infrastructure"
+    },
+    "3356": {
+      "provider": "Level 3 (Lumen)",
+      "category": "ISP/Hosting",
+      "confidence": 80,
+      "description": "Level 3 Communications (now Lumen)"
+    },
+    "6939": {
+      "provider": "Hurricane Electric",
+      "category": "Colocation",
+      "confidence": 85,
+      "description": "Hurricane Electric data center"
+    },
+    "16625": {
+      "provider": "Akamai",
+      "category": "CDN",
+      "confidence": 95,
+      "description": "Akamai CDN"
+    },
+    "20940": {
+      "provider": "Akamai",
+      "category": "CDN",
+      "confidence": 95,
+      "description": "Akamai CDN"
+    },
+    "16625": {
+      "provider": "Akamai",
+      "category": "CDN",
+      "confidence": 95,
+      "description": "Akamai CDN"
+    },
+    "15133": {
+      "provider": "Edgecast (Verizon Media)",
+      "category": "CDN",
+      "confidence": 90,
+      "description": "Edgecast CDN"
+    },
+    "22822": {
+      "provider": "Limelight Networks",
+      "category": "CDN",
+      "confidence": 90,
+      "description": "Limelight CDN"
+    },
+    "30148": {
+      "provider": "Sucuri",
+      "category": "Security/CDN",
+      "confidence": 90,
+      "description": "Sucuri website security and CDN"
+    },
+    "54113": {
+      "provider": "Fastly",
+      "category": "CDN",
+      "confidence": 95,
+      "description": "Fastly CDN"
+    },
+    "394192": {
+      "provider": "Cloudflare",
+      "category": "CDN",
+      "confidence": 95,
+      "description": "Cloudflare CDN"
+    },
+    "209242": {
+      "provider": "Cloudflare",
+      "category": "CDN",
+      "confidence": 95,
+      "description": "Cloudflare CDN"
+    },
+    "393406": {
+      "provider": "Cloudflare",
+      "category": "CDN",
+      "confidence": 95,
+      "description": "Cloudflare CDN"
+    },
+    "40034": {
+      "provider": "Confluence Networks (Shopify)",
+      "category": "E-commerce Platform",
+      "confidence": 90,
+      "description": "Shopify infrastructure"
+    },
+    "62679": {
+      "provider": "Shopify",
+      "category": "E-commerce Platform",
+      "confidence": 95,
+      "description": "Shopify e-commerce platform"
+    },
+    "55967": {
+      "provider": "Shopify",
+      "category": "E-commerce Platform",
+      "confidence": 95,
+      "description": "Shopify e-commerce platform"
+    },
+    "14907": {
+      "provider": "Wikimedia Foundation",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "Wikimedia infrastructure"
+    },
+    "32934": {
+      "provider": "Facebook",
+      "category": "Social Media",
+      "confidence": 90,
+      "description": "Facebook infrastructure"
+    },
+    "13414": {
+      "provider": "Twitter",
+      "category": "Social Media",
+      "confidence": 90,
+      "description": "Twitter infrastructure"
+    },
+    "16591": {
+      "provider": "Google Fiber",
+      "category": "ISP",
+      "confidence": 80,
+      "description": "Google Fiber ISP"
+    },
+    "7922": {
+      "provider": "Comcast",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Comcast ISP (residential)"
+    },
+    "7018": {
+      "provider": "AT&T",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "AT&T ISP (residential/business)"
+    },
+    "22773": {
+      "provider": "Cox Communications",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Cox ISP (residential)"
+    },
+    "11351": {
+      "provider": "Charter Communications (Spectrum)",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Charter/Spectrum ISP (residential)"
+    },
+    "33363": {
+      "provider": "Charter Communications (Spectrum)",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Charter/Spectrum ISP (residential)"
+    },
+    "7843": {
+      "provider": "Verizon",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Verizon ISP (residential/business)"
+    },
+    "701": {
+      "provider": "Verizon Business",
+      "category": "ISP/Hosting",
+      "confidence": 80,
+      "description": "Verizon Business infrastructure"
+    },
+    "25820": {
+      "provider": "IT7 Networks",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "IT7 Networks hosting"
+    },
+    "29802": {
+      "provider": "HVC Communications (HiVelocity)",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "HiVelocity hosting"
+    },
+    "53667": {
+      "provider": "FranTech Solutions (BuyVM)",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "BuyVM cloud hosting"
+    },
+    "25369": {
+      "provider": "Hydra Communications",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "Hydra Communications hosting"
+    },
+    "398465": {
+      "provider": "Contabo",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "Contabo cloud hosting (Germany)"
+    },
+    "51167": {
+      "provider": "Contabo",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "Contabo cloud hosting (Germany)"
+    },
+    "9009": {
+      "provider": "M247",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "M247 hosting infrastructure"
+    },
+    "60068": {
+      "provider": "CDN77",
+      "category": "CDN",
+      "confidence": 90,
+      "description": "CDN77 content delivery network"
+    },
+    "60781": {
+      "provider": "LeaseWeb",
+      "category": "Hosting",
+      "confidence": 90,
+      "description": "LeaseWeb hosting (Netherlands)"
+    },
+    "16265": {
+      "provider": "LeaseWeb",
+      "category": "Hosting",
+      "confidence": 90,
+      "description": "LeaseWeb hosting (Netherlands)"
+    },
+    "49544": {
+      "provider": "i3D.net",
+      "category": "Hosting",
+      "confidence": 90,
+      "description": "i3D.net hosting (Netherlands)"
+    },
+    "49981": {
+      "provider": "WorldStream",
+      "category": "Hosting",
+      "confidence": 90,
+      "description": "WorldStream hosting (Netherlands)"
+    },
+    "60781": {
+      "provider": "LeaseWeb",
+      "category": "Hosting",
+      "confidence": 90,
+      "description": "LeaseWeb hosting"
+    },
+    "9318": {
+      "provider": "SK Broadband",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "SK Broadband ISP (South Korea)"
+    },
+    "4766": {
+      "provider": "Korea Telecom",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Korea Telecom ISP"
+    },
+    "9370": {
+      "provider": "Sakura Internet",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "Sakura Internet hosting (Japan)"
+    },
+    "7684": {
+      "provider": "Sakura Internet",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "Sakura Internet hosting (Japan)"
+    },
+    "4713": {
+      "provider": "NTT Communications",
+      "category": "ISP/Hosting",
+      "confidence": 85,
+      "description": "NTT Communications (Japan)"
+    },
+    "2516": {
+      "provider": "KDDI",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "KDDI ISP (Japan)"
+    },
+    "17506": {
+      "provider": "GMO Internet",
+      "category": "Hosting",
+      "confidence": 90,
+      "description": "GMO Internet hosting (Japan)"
+    },
+    "7684": {
+      "provider": "Sakura Internet",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "Sakura Internet hosting (Japan)"
+    },
+    "131965": {
+      "provider": "Xserver",
+      "category": "Shared Hosting",
+      "confidence": 90,
+      "description": "Xserver web hosting (Japan)"
+    },
+    "38631": {
+      "provider": "Aruba",
+      "category": "Hosting",
+      "confidence": 90,
+      "description": "Aruba hosting (Italy)"
+    },
+    "31034": {
+      "provider": "Aruba",
+      "category": "Hosting",
+      "confidence": 90,
+      "description": "Aruba hosting (Italy)"
+    },
+    "12874": {
+      "provider": "Fastweb",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Fastweb ISP (Italy)"
+    },
+    "30722": {
+      "provider": "Vodafone Italy",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Vodafone ISP (Italy)"
+    },
+    "12322": {
+      "provider": "Free SAS",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Free ISP (France)"
+    },
+    "3215": {
+      "provider": "Orange",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Orange ISP (France)"
+    },
+    "5410": {
+      "provider": "Bouygues Telecom",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Bouygues Telecom ISP (France)"
+    },
+    "12876": {
+      "provider": "Online SAS (Scaleway)",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "Scaleway cloud hosting (France)"
+    },
+    "51167": {
+      "provider": "Contabo",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "Contabo cloud hosting (Germany)"
+    },
+    "24961": {
+      "provider": "myLoc managed IT",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "myLoc hosting (Germany)"
+    },
+    "8881": {
+      "provider": "Versatel (1&1)",
+      "category": "ISP/Hosting",
+      "confidence": 80,
+      "description": "Versatel/1&1 (Germany)"
+    },
+    "3320": {
+      "provider": "Deutsche Telekom",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Deutsche Telekom ISP (Germany)"
+    },
+    "6805": {
+      "provider": "Telefonica Germany",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Telefonica ISP (Germany)"
+    },
+    "5089": {
+      "provider": "Virgin Media",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Virgin Media ISP (UK)"
+    },
+    "2856": {
+      "provider": "British Telecom (BT)",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "BT ISP (UK)"
+    },
+    "5607": {
+      "provider": "Sky UK",
+      "category": "ISP",
+      "confidence": 75,
+      "description": "Sky ISP (UK)"
+    },
+    "43350": {
+      "provider": "NForce Entertainment",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "NForce hosting (Netherlands)"
+    },
+    "35916": {
+      "provider": "MULTACOM",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "MULTACOM hosting"
+    },
+    "62240": {
+      "provider": "Clouvider",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "Clouvider cloud hosting"
+    },
+    "201011": {
+      "provider": "Hostkey",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "Hostkey hosting"
+    },
+    "47447": {
+      "provider": "Anexia",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "Anexia cloud hosting (Austria)"
+    },
+    "42831": {
+      "provider": "UK Dedicated Servers",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "UK Dedicated Servers hosting"
+    },
+    "213230": {
+      "provider": "Hetzner Online",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "Hetzner cloud hosting (Germany)"
+    },
+    "41436": {
+      "provider": "Kamatera",
+      "category": "Cloud",
+      "confidence": 90,
+      "description": "Kamatera cloud hosting"
+    },
+    "8100": {
+      "provider": "QuadraNet",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "QuadraNet hosting"
+    },
+    "19531": {
+      "provider": "Voxility",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "Voxility hosting"
+    },
+    "36352": {
+      "provider": "ColoCrossing",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "ColoCrossing hosting"
+    },
+    "32613": {
+      "provider": "iWeb Technologies",
+      "category": "Hosting",
+      "confidence": 85,
+      "description": "iWeb hosting (Canada)"
+    },
+    "16276": {
+      "provider": "OVH",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "OVH cloud hosting"
+    },
+    "35540": {
+      "provider": "OVH",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "OVH cloud hosting"
+    },
+    "16276": {
+      "provider": "OVH SAS",
+      "category": "Cloud",
+      "confidence": 95,
+      "description": "OVH cloud hosting (France)"
+    }
+  },
+  "metadata": {
+    "version": "1.0.0",
+    "last_updated": "2026-02-10",
+    "total_asns": 120,
+    "categories": [
+      "Cloud",
+      "CDN",
+      "Shared Hosting",
+      "Managed Hosting",
+      "E-commerce Platform",
+      "Colocation",
+      "ISP",
+      "ISP/Hosting",
+      "Security/CDN",
+      "Social Media",
+      "Hosting"
+    ],
+    "confidence_levels": {
+      "95": "High confidence - Well-known provider with clear ASN ownership",
+      "90": "Good confidence - Known provider, may have multiple ASNs",
+      "85": "Medium confidence - Provider identified, but may share infrastructure",
+      "80": "Lower confidence - ISP or mixed-use network",
+      "75": "Low confidence - Residential ISP, not typically used for hosting"
+    }
+  }
+}

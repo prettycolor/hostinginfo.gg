@@ -1,0 +1,8 @@
+# Docker ignore for V8 App Template
+node_modules
+
+# Development files
+*.log
+.env.local
+.env.development
+.env.test

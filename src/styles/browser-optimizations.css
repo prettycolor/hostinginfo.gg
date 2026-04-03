@@ -1,0 +1,299 @@
+/**
+ * Browser-Specific Optimizations
+ * Cross-browser compatibility and performance optimizations
+ */
+
+/* ============================================
+   PERFORMANCE MODE CLASSES
+   ============================================ */
+
+/* Low Performance Mode - Disable expensive effects */
+.low-performance-mode * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+/* Medium Performance Mode - Reduce effects */
+.medium-performance-mode * {
+  animation-duration: 0.15s !important;
+  transition-duration: 0.15s !important;
+}
+
+/* High Performance Mode - Full effects */
+.high-performance-mode {
+  /* No restrictions */
+}
+
+/* ============================================
+   HARDWARE ACCELERATION
+   ============================================ */
+
+/* Force GPU acceleration for animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Disable GPU acceleration for low-end devices */
+.no-gpu-acceleration {
+  transform: none !important;
+  will-change: auto !important;
+  backface-visibility: visible !important;
+  perspective: none !important;
+}
+
+/* ============================================
+   FIREFOX OPTIMIZATIONS
+   ============================================ */
+
+/* Firefox-specific fixes */
+@-moz-document url-prefix() {
+  /* Improve scrolling performance */
+  * {
+    scrollbar-width: thin;
+  }
+
+  /* Fix backdrop-filter performance */
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-lg {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+  /* Optimize gradients */
+  .bg-gradient-to-r,
+  .bg-gradient-to-b,
+  .bg-gradient-to-br {
+    background-attachment: fixed;
+  }
+}
+
+/* Firefox-specific class */
+.firefox-optimized {
+  /* Use simpler shadows */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ============================================
+   SAFARI OPTIMIZATIONS
+   ============================================ */
+
+/* Safari-specific fixes */
+@supports (-webkit-backdrop-filter: blur(10px)) {
+  .backdrop-blur-sm {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+
+  .backdrop-blur-md {
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+  }
+
+  .backdrop-blur-lg {
+    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(24px);
+  }
+}
+
+/* Safari-specific class */
+.safari-optimized {
+  /* Fix transform issues */
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  
+  /* Fix scrolling */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ============================================
+   CHROME/EDGE OPTIMIZATIONS
+   ============================================ */
+
+/* Chrome/Edge-specific optimizations */
+@supports (backdrop-filter: blur(10px)) {
+  .chrome-optimized {
+    /* Use full effects */
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* ============================================
+   MOBILE OPTIMIZATIONS
+   ============================================ */
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Reduce animations on mobile */
+  * {
+    animation-duration: 0.2s !important;
+    transition-duration: 0.2s !important;
+  }
+
+  /* Disable expensive effects on mobile */
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-lg {
+    backdrop-filter: none !important;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  /* Simplify shadows on mobile */
+  .shadow-2xl,
+  .shadow-xl,
+  .shadow-lg {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+  }
+
+  /* Optimize scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* ============================================
+   WINDOWS OPTIMIZATIONS
+   ============================================ */
+
+/* Windows-specific scrollbar styling */
+.windows-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(155, 155, 155, 0.5) transparent;
+}
+
+.windows-scrollbar::-webkit-scrollbar {
+  width: 12px;
+}
+
+.windows-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.windows-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(155, 155, 155, 0.5);
+  border-radius: 6px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+.windows-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(155, 155, 155, 0.7);
+}
+
+/* ============================================
+   MACOS OPTIMIZATIONS
+   ============================================ */
+
+/* macOS-specific scrollbar styling */
+.macos-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+}
+
+.macos-scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.macos-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.macos-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+}
+
+.macos-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+/* Respect user's reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ============================================
+   PRINT OPTIMIZATIONS
+   ============================================ */
+
+/* Print-specific optimizations */
+@media print {
+  * {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  * {
+    border-width: 2px !important;
+  }
+
+  .backdrop-blur-sm,
+  .backdrop-blur-md,
+  .backdrop-blur-lg {
+    backdrop-filter: none !important;
+    background-color: rgba(0, 0, 0, 0.95) !important;
+  }
+}
+
+/* ============================================
+   PERFORMANCE UTILITIES
+   ============================================ */
+
+/* Optimize rendering */
+.optimize-rendering {
+  contain: layout style paint;
+  content-visibility: auto;
+}
+
+/* Optimize images */
+.optimize-image {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Optimize text */
+.optimize-text {
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Disable pointer events for non-interactive elements */
+.no-pointer-events {
+  pointer-events: none;
+}
+
+/* Enable pointer events for interactive elements */
+.pointer-events-auto {
+  pointer-events: auto;
+}
